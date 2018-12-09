@@ -1,0 +1,826 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- SQL XML created by WWW SQL Designer, https://github.com/ondras/wwwsqldesigner/ -->
+<!-- Active URL: http://localhost/sqldesigner/index.html -->
+<sql>
+<datatypes db="mysql">
+	<group label="Numeric" color="rgb(238,238,170)">
+		<type label="Integer" length="0" sql="INTEGER" quote=""/>
+	 	<type label="TINYINT" length="0" sql="TINYINT" quote=""/>
+	 	<type label="SMALLINT" length="0" sql="SMALLINT" quote=""/>
+	 	<type label="MEDIUMINT" length="0" sql="MEDIUMINT" quote=""/>
+	 	<type label="INT" length="0" sql="INT" quote=""/>
+		<type label="BIGINT" length="0" sql="BIGINT" quote=""/>
+		<type label="Decimal" length="1" sql="DECIMAL" re="DEC" quote=""/>
+		<type label="Single precision" length="0" sql="FLOAT" quote=""/>
+		<type label="Double precision" length="0" sql="DOUBLE" re="DOUBLE" quote=""/>
+	</group>
+
+	<group label="Character" color="rgb(255,200,200)">
+		<type label="Char" length="1" sql="CHAR" quote="'"/>
+		<type label="Varchar" length="1" sql="VARCHAR" quote="'"/>
+		<type label="Text" length="0" sql="MEDIUMTEXT" re="TEXT" quote="'"/>
+		<type label="Binary" length="1" sql="BINARY" quote="'"/>
+		<type label="Varbinary" length="1" sql="VARBINARY" quote="'"/>
+		<type label="BLOB" length="0" sql="BLOB" re="BLOB" quote="'"/>
+	</group>
+
+	<group label="Date &amp; Time" color="rgb(200,255,200)">
+		<type label="Date" length="0" sql="DATE" quote="'"/>
+		<type label="Time" length="0" sql="TIME" quote="'"/>
+		<type label="Datetime" length="0" sql="DATETIME" quote="'"/>
+		<type label="Year" length="0" sql="YEAR" quote=""/>
+		<type label="Timestamp" length="0" sql="TIMESTAMP" quote="'"/>
+	</group>
+	
+	<group label="Miscellaneous" color="rgb(200,200,255)">
+		<type label="ENUM" length="1" sql="ENUM" quote=""/>
+		<type label="SET" length="1" sql="SET" quote=""/>
+		<type label="Bit" length="0" sql="bit" quote=""/>
+	</group>
+</datatypes><table x="2545" y="514" name="Persona">
+<row name="DNI" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="Cita" row="DNIP" />
+<relation table="Personal" row="DNI" />
+<relation table="Paciente" row="DNI" />
+</row>
+<row name="NumSeguSoc" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="Personal" row="NumSeguSoc" />
+<relation table="Cita" row="NumSegSocP" />
+</row>
+<row name="Telefono" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="Direccion" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="Fech_Nac" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="Nombre" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="Prim_Apellido" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="Seg_Apellido" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="Sexo" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>DNI</part>
+<part>NumSeguSoc</part>
+</key>
+</table>
+<table x="2285" y="0" name="Personal">
+<row name="DNI" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="Medico" row="DNI" />
+<relation table="Enfermera(o)" row="DNI" />
+<relation table="Vigilante" row="DNI" />
+<relation table="Conductor" row="DNI" />
+<relation table="Director" row="DNI" />
+<relation table="P.Limpieza" row="DNI" />
+<relation table="Auxiliador" row="DNI" />
+<relation table="Farmaceutico(a)" row="DNI" />
+<relation table="Recepcionista" row="DNI" />
+</row>
+<row name="NumSeguSoc" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="Medico" row="NumSeguSoc" />
+<relation table="Enfermera(o)" row="NumSeguSoc" />
+<relation table="Vigilante" row="NumSeguSoc" />
+<relation table="Conductor" row="NumSeguSoc" />
+<relation table="Director" row="NumSeguSoc" />
+<relation table="P.Limpieza" row="NumSeguSoc" />
+<relation table="Auxiliador" row="NumSeguSoc" />
+<relation table="Farmaceutico(a)" row="NumSeguSoc" />
+<relation table="Recepcionista" row="NumSeguSoc" />
+</row>
+<row name="Codigo" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="Medico" row="Codigo" />
+<relation table="Enfermera(o)" row="Codigo" />
+<relation table="Vigilante" row="Codigo" />
+<relation table="Conductor" row="Codigo" />
+<relation table="Director" row="Codigo" />
+<relation table="P.Limpieza" row="Codigo" />
+<relation table="Auxiliador" row="Codigo" />
+<relation table="Farmaceutico(a)" row="Codigo" />
+<relation table="Recepcionista" row="Codigo" />
+</row>
+<row name="RUC_Hosp" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="Hospital" row="RUC" />
+</row>
+<key type="PRIMARY" name="">
+<part>DNI</part>
+<part>Codigo</part>
+<part>NumSeguSoc</part>
+</key>
+</table>
+<table x="2210" y="1009" name="Paciente">
+<row name="DNI" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="Amb_Pac" row="DNI" />
+<relation table="Emerg_Pac" row="DNI" />
+<relation table="Cuarto_Paciente" row="DNI" />
+</row>
+<row name="NumSeguSoc" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="Emerg_Pac" row="NumSegSoc" />
+<relation table="Cuarto_Paciente" row="NumSegSoc" />
+</row>
+<row name="Num_Historial" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="Emerg_Pac" row="Num_Historial" />
+<relation table="Cuarto_Paciente" row="Num_Historial" />
+<relation table="Pac_Sintomas" row="Num_Historial_Pac" />
+<relation table="Amb_Pac" row="Num_Historial" />
+</row>
+<key type="PRIMARY" name="">
+<part>DNI</part>
+<part>NumSeguSoc</part>
+<part>Num_Historial</part>
+</key>
+</table>
+<table x="2288" y="1242" name="Pac_Sintomas">
+<row name="Num_Historial_Pac" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="Sintomas" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>Num_Historial_Pac</part>
+</key>
+</table>
+<table x="1748" y="901" name="Medico">
+<row name="DNI" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="Cita" row="DNIM" />
+</row>
+<row name="NumSeguSoc" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="Cita" row="NumSegSocM" />
+</row>
+<row name="Codigo" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="Cita" row="CosigoM" />
+</row>
+<key type="PRIMARY" name="">
+<part>DNI</part>
+<part>NumSeguSoc</part>
+<part>Codigo</part>
+</key>
+</table>
+<table x="1356" y="157" name="Enfermera(o)">
+<row name="DNI" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="NumSeguSoc" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="Codigo" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="Num_Bloq" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="Bloque" row="Numero" />
+</row>
+<key type="PRIMARY" name="">
+<part>DNI</part>
+<part>NumSeguSoc</part>
+<part>Codigo</part>
+</key>
+</table>
+<table x="1728" y="95" name="Vigilante">
+<row name="DNI" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="NumSeguSoc" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="Codigo" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>DNI</part>
+<part>NumSeguSoc</part>
+<part>Codigo</part>
+</key>
+</table>
+<table x="1715" y="438" name="Conductor">
+<row name="DNI" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="NumSeguSoc" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="Codigo" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>DNI</part>
+<part>NumSeguSoc</part>
+<part>Codigo</part>
+</key>
+</table>
+<table x="1734" y="209" name="Director">
+<row name="DNI" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="NumSeguSoc" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="Codigo" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>DNI</part>
+<part>NumSeguSoc</part>
+<part>Codigo</part>
+</key>
+</table>
+<table x="1729" y="317" name="P.Limpieza">
+<row name="DNI" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="NumSeguSoc" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="Codigo" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>DNI</part>
+<part>NumSeguSoc</part>
+<part>Codigo</part>
+</key>
+</table>
+<table x="1717" y="553" name="Auxiliador">
+<row name="DNI" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="NumSeguSoc" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="Codigo" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>DNI</part>
+<part>NumSeguSoc</part>
+<part>Codigo</part>
+</key>
+</table>
+<table x="1713" y="663" name="Farmaceutico(a)">
+<row name="DNI" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="NumSeguSoc" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="Codigo" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="Cod_Far" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="Farmacia" row="Codigo" />
+</row>
+<key type="PRIMARY" name="">
+<part>DNI</part>
+<part>NumSeguSoc</part>
+<part>Codigo</part>
+</key>
+</table>
+<table x="1724" y="799" name="Recepcionista">
+<row name="DNI" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="Cita" row="DNIR" />
+</row>
+<row name="NumSeguSoc" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="Cita" row="NumSefSocR" />
+</row>
+<row name="Codigo" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="Cita" row="CodigoR" />
+</row>
+<key type="PRIMARY" name="">
+<part>DNI</part>
+<part>NumSeguSoc</part>
+<part>Codigo</part>
+</key>
+</table>
+<table x="227" y="86" name="Bloque">
+<row name="Numero" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="Urgencias" row="Numero" />
+<relation table="Hospitalizacion" row="Numero" />
+<relation table="Pediatria" row="Numero" />
+<relation table="Consultas" row="Numero" />
+<relation table="Registro_Limpieza" row="Numero" />
+</row>
+<row name="RUC_Hosp" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="Hospital" row="RUC" />
+</row>
+<key type="PRIMARY" name="">
+<part>Numero</part>
+</key>
+</table>
+<table x="292" y="258" name="Urgencias">
+<row name="Numero" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>Numero</part>
+</key>
+</table>
+<table x="278" y="380" name="Hospitalizacion">
+<row name="Numero" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>Numero</part>
+</key>
+</table>
+<table x="279" y="603" name="Pediatria">
+<row name="Numero" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>Numero</part>
+</key>
+</table>
+<table x="277" y="497" name="Consultas">
+<row name="Numero" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="Cita" row="NumeroBC" />
+</row>
+<key type="PRIMARY" name="">
+<part>Numero</part>
+</key>
+</table>
+<table x="1142" y="8" name="Hospital">
+<row name="RUC" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="Direccion" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="Pais" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="Gmail" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>RUC</part>
+</key>
+</table>
+<table x="1367" y="70" name="Entrada">
+<row name="Codigo" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="RUC_Hosp" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="Hospital" row="RUC" />
+</row>
+<key type="PRIMARY" name="">
+<part>Codigo</part>
+</key>
+</table>
+<table x="1549" y="76" name="Ent_Vig">
+<row name="CodigoE" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="Entrada" row="Codigo" />
+</row>
+<row name="DNI" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="Vigilante" row="DNI" />
+</row>
+<row name="NumSegSoc" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="Vigilante" row="NumSeguSoc" />
+</row>
+<row name="CodigoV" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="Vigilante" row="Codigo" />
+</row>
+<key type="PRIMARY" name="">
+<part>CodigoE</part>
+<part>DNI</part>
+<part>NumSegSoc</part>
+<part>CodigoV</part>
+</key>
+</table>
+<table x="1118" y="553" name="Ambulancia">
+<row name="Placa" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="Amb_Con" row="Placa" />
+<relation table="Amb_Aux" row="Placa" />
+<relation table="Amb_Pac" row="Placa" />
+</row>
+<row name="Capacidad" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="RUC_Hosp" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="Hospital" row="RUC" />
+</row>
+<key type="PRIMARY" name="">
+<part>Placa</part>
+</key>
+</table>
+<table x="1394" y="478" name="Amb_Con">
+<row name="Placa" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="DNI" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="Conductor" row="DNI" />
+</row>
+<row name="NumSegSoc" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="Conductor" row="NumSeguSoc" />
+</row>
+<row name="Codigo" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="Conductor" row="Codigo" />
+</row>
+<key type="PRIMARY" name="">
+<part>Placa</part>
+<part>DNI</part>
+<part>NumSegSoc</part>
+<part>Codigo</part>
+</key>
+</table>
+<table x="1370" y="289" name="Registro_Limpieza">
+<row name="Numero" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="DNI" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="P.Limpieza" row="DNI" />
+</row>
+<row name="NumSeguSoc" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="P.Limpieza" row="NumSeguSoc" />
+</row>
+<row name="Codigo" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="P.Limpieza" row="Codigo" />
+</row>
+<row name="Fecha" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="Hora" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>Numero</part>
+<part>DNI</part>
+<part>NumSeguSoc</part>
+<part>Codigo</part>
+</key>
+</table>
+<table x="1401" y="616" name="Amb_Aux">
+<row name="Placa" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="DNI" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="Auxiliador" row="DNI" />
+</row>
+<row name="NumSeguSoc" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="Auxiliador" row="NumSeguSoc" />
+</row>
+<row name="Codigo" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="Auxiliador" row="Codigo" />
+</row>
+<key type="PRIMARY" name="">
+<part>Placa</part>
+<part>DNI</part>
+<part>NumSeguSoc</part>
+<part>Codigo</part>
+</key>
+</table>
+<table x="1132" y="667" name="Farmacia">
+<row name="Codigo" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="RUC_Hosp" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="Hospital" row="RUC" />
+</row>
+<key type="PRIMARY" name="">
+<part>Codigo</part>
+</key>
+</table>
+<table x="1428" y="1103" name="Amb_Pac">
+<row name="Placa" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="DNI" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="NumSeguSoc" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="Paciente" row="NumSeguSoc" />
+</row>
+<row name="Num_Historial" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>Placa</part>
+<part>DNI</part>
+<part>NumSeguSoc</part>
+<part>Num_Historial</part>
+</key>
+</table>
+<table x="900" y="620" name="Medicamentos">
+<row name="Codigo" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="Accion_Medica" row="Cod_Medi" />
+<relation table="Accion_Medica" row="Cod_Medi" />
+<relation table="Accion_Medica" row="Cod_Medi" />
+<relation table="Medicamento_Lab" row="CodigoM" />
+<relation table="Medicamento_EmpPro" row="Codigo" />
+<relation table="Receta" row="CodigoM" />
+<relation table="Almacen_Medicamentos" row="CodigoM" />
+</row>
+<row name="Nombre" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="Precio" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="Fecha_Caducidad" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="Cod_Far" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="Farmacia" row="Codigo" />
+</row>
+<key type="PRIMARY" name="">
+<part>Codigo</part>
+</key>
+</table>
+<table x="910" y="801" name="Accion_Medica">
+<row name="Cod_Medi" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="Medicamentos" row="Codigo" />
+</row>
+<row name="Accion" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>Cod_Medi</part>
+</key>
+</table>
+<table x="1132" y="887" name="Laboratorio">
+<row name="Codigo" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="Medicamento_Lab" row="CodigoL" />
+</row>
+<row name="Direccion" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>Codigo</part>
+</key>
+</table>
+<table x="1112" y="785" name="Medicamento_Lab">
+<row name="CodigoM" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="CodigoL" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>CodigoM</part>
+<part>CodigoL</part>
+</key>
+</table>
+<table x="1134" y="988" name="Emp_Proveedora">
+<row name="RUC" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="Direccion" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>RUC</part>
+</key>
+</table>
+<table x="860" y="923" name="Medicamento_EmpPro">
+<row name="Codigo" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="RUC" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="Emp_Proveedora" row="RUC" />
+</row>
+<key type="PRIMARY" name="">
+<part>Codigo</part>
+<part>RUC</part>
+</key>
+</table>
+<table x="890" y="451" name="Receta">
+<row name="DNI" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="Medico" row="DNI" />
+</row>
+<row name="NumSegSoc" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="Medico" row="NumSeguSoc" />
+</row>
+<row name="CodigoMed" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="Medico" row="Codigo" />
+</row>
+<row name="CodigoM" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="CodigoD" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="Diagnostico" row="Codigo" />
+</row>
+<key type="PRIMARY" name="">
+<part>DNI</part>
+<part>NumSegSoc</part>
+<part>CodigoM</part>
+<part>CodigoMed</part>
+<part>CodigoD</part>
+</key>
+</table>
+<table x="665" y="757" name="Diagnostico">
+<row name="Codigo" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="Cita" row="CodigoD" />
+</row>
+<row name="Emfermedad" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="Tratamiento" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>Codigo</part>
+</key>
+</table>
+<table x="562" y="1082" name="Cita">
+<row name="CodigoD" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="DNIM" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="NumSegSocM" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="CosigoM" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="NumeroBC" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="DNIR" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="NumSefSocR" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="CodigoR" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="Fecha" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="Tipo" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="Costo" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="NumSegSocP" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="DNIP" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>CodigoD</part>
+<part>DNIM</part>
+<part>NumSegSocM</part>
+<part>CosigoM</part>
+<part>NumeroBC</part>
+<part>CodigoR</part>
+<part>DNIR</part>
+<part>NumSefSocR</part>
+<part>NumSegSocP</part>
+<part>DNIP</part>
+</key>
+</table>
+<table x="1416" y="1250" name="Emerg_Pac">
+<row name="DNI" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="NumSegSoc" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="Num_Historial" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="CodigoE" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="Emergencia" row="Codigo" />
+</row>
+<key type="PRIMARY" name="">
+<part>NumSegSoc</part>
+<part>DNI</part>
+<part>Num_Historial</part>
+<part>CodigoE</part>
+</key>
+</table>
+<table x="1013" y="1200" name="Emergencia">
+<row name="Codigo" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="Tipo" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="NumeroBU" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="Urgencias" row="Numero" />
+</row>
+<key type="PRIMARY" name="">
+<part>Codigo</part>
+</key>
+</table>
+<table x="1018" y="1398" name="Cuarto_Paciente">
+<row name="DNI" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="NumSegSoc" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="Num_Historial" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="NumeroC" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>DNI</part>
+<part>NumSegSoc</part>
+<part>Num_Historial</part>
+<part>NumeroC</part>
+</key>
+</table>
+<table x="325" y="867" name="Cuarto">
+<row name="Numero" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="Cuarto_Paciente" row="NumeroC" />
+</row>
+<row name="NumeroBH" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="Hospitalizacion" row="Numero" />
+</row>
+<key type="PRIMARY" name="">
+<part>Numero</part>
+</key>
+</table>
+<table x="662" y="248" name="Almacen">
+<row name="Codigo" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="Almacen_Medicamentos" row="CodigoA" />
+</row>
+<row name="RUCH" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="Hospital" row="RUC" />
+</row>
+<key type="PRIMARY" name="">
+<part>Codigo</part>
+</key>
+</table>
+<table x="626" y="418" name="Almacen_Medicamentos">
+<row name="CodigoA" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="CodigoM" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>CodigoA</part>
+<part>CodigoM</part>
+</key>
+</table>
+</sql>

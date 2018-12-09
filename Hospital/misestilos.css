@@ -1,0 +1,141 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+h1 {
+	font-weight: bold;
+	font-size: 50px;
+	font-family: verdana, sans-serif;
+}
+h2 {
+	font-weight: bold;
+	font-size: 20px;
+	font-family: verdana, sans-serif;
+}
+header, section, footer, aside, nav, article, figure, figcaption {
+	display: block;
+}
+body {
+	text-align: center;
+	background-size: cover;
+	background-attachment: fixed;
+
+}
+#agrupar {
+	width: 1300px;
+	margin: 15px auto;
+	text-align: left;
+}
+#cabecera {
+
+	padding: 15px;
+	width: 1300px;
+	text-align: center;
+	text-shadow: rgb(0,100,120) 3px 3px 5px;
+	font:bold 20px verdana,sans-serif;
+	background-size: 180px;
+	-webkit-border-radius:50px 50px 0px 0px;
+	border-radius: 20px/30px/20px/30px;
+
+
+
+}
+#izquierda{
+  float: left;
+  width: 320px;
+  margin: 20px;
+  padding: 20px;
+  background: #CCCCFF;
+}
+#derecha{
+
+  float: left;
+  width: 320px;
+  margin: 20px 0px;
+  padding: 20px;
+  background: #CCCCFF;
+
+}
+#menu {
+	width: 1300px;
+	background: #12345678;
+	padding: 5px 15px;
+}
+#menu li {
+	display: inline-block;
+	list-style: none;
+	padding: 5px;
+	margin-left: 100px;
+	margin-right: 130px;
+	font: bold 14px verdana, sans-serif;
+}
+#menu a:link, #menu a:visited {
+	color: #f00;
+	text-decoration: none;
+}
+#menu a:hover {
+	background-color: #369123;
+}
+#seccion {
+	float: left;
+	width: 800px;
+	margin: 20px;
+	text-align: center;
+	background: #CCCCFF;
+}
+#columna {
+	background: #CCCCFF;
+	float: left;
+	width: 220px;
+	margin: 20px 0px;
+	padding: 20px;
+	background: #CCCCCC;
+}
+#pie {
+  clear: both;
+  text-align: center;
+  padding: 20px;
+  border-top: 2px solid #999999;
+}
+table
+{
+	border-collapse: collapse;
+}
+td
+{
+	border: 2px solid black;
+}
+th
+{
+	border: 2px solid black;
+}
+h3{
+	font-size: 40px;
+	background: #CCCCFF;
+	height: 50px;
+	text-shadow: rgb(0,100,120) 3px 3px 5px;
+}
+h2{
+	font-size: 30px;
+	color: white;
+	text-shadow: rgb(0,100,120) 3px 3px 5px;
+}
+article {
+	text-align: center;
+	background-size: cover;
+	padding: 20px;
+	margin-bottom: 15px;
+}
+article footer {
+	text-align: right;
+}
+time {
+	color: #999999;
+}
+figcaption {
+	font: italic 14px verdana, sans-serif;
+}
+p{
+	font-size: 20px;
+	font-weight: bold;
+}
